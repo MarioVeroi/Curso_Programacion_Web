@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    height: 300px;
+    background-color: firebrick;
+}
+
+section{
+    height: 400px;
+}
+.uno{
+    background-image: url(../../Imagenes/Imagen-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dos{
+    background-color: red;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+}

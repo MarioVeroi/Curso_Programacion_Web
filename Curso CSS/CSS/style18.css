@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+
+html{
+    font-size: 25px;
+}
+
+div{
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.key{
+    background-color: chartreuse;
+}
+
+.hex{
+    background-color: #fff048;
+}
+.rgb{
+    background-color: rgb(22, 44, 0,2);
+}
+.hsl{
+    background-color: hsla(161, 94%, 49%, 0.966);
+}
+.rgba{
+    background-color: rgba(255, 0, 0, 0.801);
+}
+.hsla{
+    background-color: hsla(120, 100%, 40%, 1);
+}
