@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: brown;
+}
+
+.Transition{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 0 auto;
+    transition-property: background-color, height, width;
+    transition-duration: 1.5s, 2s, 1s;
+    transition-timing-function: 1.7s cubic-bezier(.06,.89,1,-0.18);
+    transition-delay: 0s, 1s, 2s;
+}
+
+div:hover{
+    background-color: rgb(247, 252, 0);
+    height: 600px;
+    width: 100% ;
+}
