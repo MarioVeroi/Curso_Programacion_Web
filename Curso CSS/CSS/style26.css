@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    background-color: brown;
+    perspective: 800px;
+}
+
+.contenedor{
+    cursor: pointer;
+    width: 250px;
+    width: 250px;
+    margin: 20% auto;
+    position: relative;
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+}
+
+.contenedor div > img{
+    width: 100%;
+}
+
+.front, .back{
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    transform: rotateY(180deg);
+}
+.contenedor:hover{
+    transform: rotateY(180deg);
+}
+
