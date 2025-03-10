@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+.circulo{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    position: absolute;
+    animation-name: Girar;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Girar {
+    0%{
+        background-color: black;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+    }
+
+    25%{
+        background-color: blue;
+        top: 85%;
+        left: 0;
+    }
+
+    50%{
+        top: 85%;
+        left: 87%;
+    }
+
+    75%{
+        background-color: rgb(253, 249, 0);
+        top: 0%;
+        left: 87%;
+    }
+
+    100%{
+        top: 0;
+        left: 0;
+    }
+
+}
+#Play-state{
+    position: absolute;
+    padding: 20px;
+    top: 40%;
+    left: 40%;
+}
+
+.play{
+    animation-play-state: running;
+}
+
+.pause{
+    animation-play-state: paused;
+}
