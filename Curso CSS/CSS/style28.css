@@ -74,8 +74,8 @@ article p {
 @media (min-width: 768px) and (max-width: 1024px) {
     section#contenido {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+            justify-content: center;
+            gap: 20px;
     }
 
     article {
