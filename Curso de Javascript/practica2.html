@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Diferencias entre var, let y const</title>
+    <link rel="stylesheet" href="css/estilos2.css">
+    <script defer src="js/Ejercicio2.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .code-block {
+            background-color: #222;
+            color: #0f0;
+            padding: 10px;
+            margin: 10px auto;
+            width: 80%;
+            text-align: left;
+            font-family: monospace;
+            border-radius: 5px;
+        }
+
+        .warning {
+            color: yellow;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Diferencias entre <code>var</code>, <code>let</code> y <code>const</code> en JavaScript</h1>
+
+    <section class="section">
+        <h2>🔹 var</h2>
+        <p><code>var</code> permite declarar variables que pueden ser reasignadas y tienen **scope global o de función**.</p>
+        <div class="code-block">
+            var nombre = "Carlos";<br>
+            var edad = 28;<br>
+            document.write("Nombre: " + nombre + " Edad: " + edad);
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🔹 let</h2>
+        <p><code>let</code> tiene **ámbito de bloque**. Es útil en bucles o condicionales. Evita redeclaraciones.</p>
+        <div class="code-block">
+            let saludo = "Hola mundo";<br>
+            if (true) {<br>
+            &nbsp;&nbsp;let saludo = "Hola desde el bloque";<br>
+            &nbsp;&nbsp;document.write(saludo);<br>
+            }<br>
+            document.write(saludo); // Muestra "Hola mundo"
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🔹 const</h2>
+        <p><code>const</code> se usa para declarar **constantes**: su valor no puede cambiar.</p>
+        <div class="code-block">
+            const pi = 3.1416;<br>
+            pi = 3.14; <span class="error">// ❌ Error: no se puede reasignar una constante</span>
+        </div>
+    </section>
+
+    <section class="info">
+        <p><strong>Resumen:</strong> Usa <code>let</code> para variables que cambiarán dentro de bloques. Usa <code>const</code> para valores que no cambiarán. Evita <code>var</code> a menos que entiendas bien su comportamiento.</p>
+    </section>
+</body>
+</html>

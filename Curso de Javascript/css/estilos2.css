@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Fondo con degradado dinámico */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+/* Títulos centrados y con sombra para mejor lectura */
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Caja informativa */
+.info {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 40px 100px;
+    padding: 20px;
+    color: white;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Código */
+.code-block {
+    background-color: #0d1117;
+    color: #0f0;
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: left;
+    font-family: monospace;
+    border-left: 5px solid #58a6ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* Textos importantes */
+.warning {
+    color: #ffcc00;
+}
+
+.error {
+    color: #ff4c4c;
+}
