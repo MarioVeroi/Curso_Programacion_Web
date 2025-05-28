@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Multidimensionales - Curso de JavaScript</title>
+</head>
+
+<style>
+    body{
+        background-color: aquamarine;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        padding-top: 70px;
+    }
+
+    section{
+        background-color: beige;
+        border: 2px solid black;
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+</style>
+<body>
+    
+
+    <section>
+        <h1>Arrays Multidimensionales</h1>
+
+        <script>
+            
+            //creamos un array tridimensional
+            var tridimensional = [];
+            tridimensional [0] = "Pelota";
+            tridimensional [1] = "Camiseta";
+
+            //creamos un array bidimensional 
+            var bidimensional = [];
+            bidimensional [0] = "Camion";
+            bidimensional [1] = "Carro";
+            bidimensional [2] = "Moto";
+            bidimensional [3] = tridimensional;
+
+            //creamos un array de una dimension, 
+            //en donde su dato es conectar con el array bidimensional
+            var unidimensional = [];
+            unidimensional[0] = "Casa";
+            unidimensional[1] = "Perico";
+            unidimensional[2] = bidimensional;
+
+            //Imprimiendo contenido
+            document.write("<p>");
+
+            document.write(unidimensional[2][3][0]);
+
+            document.write("</p>")
+        </script>
+    </section>
+</body>
+</html>
