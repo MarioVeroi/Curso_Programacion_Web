@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos, Propiedades de Arrays</title>
+</head>
+<style>
+    body{
+        background-color: aquamarine;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        padding-top: 70px;
+    }
+
+    section{
+        background-color: beige;
+        border: 2px solid black;
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <section>
+        <h1>Articulos</h1>
+
+        <script>
+            var Articulos = ["Libretas", "Lápices", "Borradores",
+             "marcadores", "Pizzara"];
+
+
+            
+            document.write("<p>");
+
+            //Lista completa
+            document.write(Articulos+"<br>");
+            document.write("<br>")
+            document.write(Articulos[2]+"<br>");
+            document.write(Articulos[2]+"<br>");
+             //agregando datos con unshift empezando desde la posicion 0
+            Articulos.unshift("Mochila");
+
+            //mostrando datos
+            document.write(Articulos[0]+"<br>")
+            document.write(Articulos+"<br>");
+           
+             //agregando datos con METODO push en la ultima posicion
+             Articulos.push("Regla");
+            document.write(Articulos+"<br>"); 
+            //cantidad de articulos en total
+            document.write(Articulos.length);
+
+            document.write("</p>")
+        </script>
+    </section>
+</body>
+</html>
