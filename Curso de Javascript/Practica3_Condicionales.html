@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 3 - Condicionales</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: rgb(189, 183, 183);
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+    </style>
+
+
+    <section>
+        <h2 style="text-align: center;">Practica 3 - Condicionales</h2>
+
+        <br>
+        <form id="bar">
+            <label for="Edad">Ingrese su edad:</label>
+            <input type="text" id="Edad" placeholder="Ingrese su edad porfavor">
+            <br>
+            <br>
+            <label for="Dinero">Ingrese su Presupuesto:</label>
+            <input type="text" id="dinero" style="width: 230px;" placeholder="Ingrese su Presupuesto, Maximo: 100">
+            <br>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
+            <br>
+            <br>
+            <label for="" id="Mostrar_Datos"></label>
+        </form>
+    </section>
+
+
+    <script>
+        document.getElementById("bar").addEventListener("submit", function(e){
+
+            e.preventDefault(); // Esto ayuda a que el formulario no se actualice.
+            let edad, dinero, datos;
+
+            edad = parseInt(document.getElementById("Edad").value);
+            dinero = parseFloat(document.getElementById("dinero").value);
+            datos = document.getElementById("Mostrar_Datos");
+
+            if(!isNaN(edad) && !isNaN(dinero)){
+                if(edad >= 36 && dinero >= 20){
+                    datos.textContent = "Estas muy Viejo para Entrar, Edad Maxima: 35 Años";
+                    datos.style.color = "RED";
+                }else if(edad >= 18 && dinero >= 20){
+                    datos.textContent = "Puedes Entrar a la Disco Sin Problemas";
+                    datos.style.color = "Green";
+                    }
+                else{
+                    datos.textContent = "No puedes entrar a la Discoteca";
+                    datos.style.color = "Red";
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

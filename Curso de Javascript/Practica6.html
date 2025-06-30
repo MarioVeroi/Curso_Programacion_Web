@@ -33,7 +33,7 @@
         <script>
             
             //creamos un array tridimensional
-            var tridimensional = [];
+           /* var tridimensional = [];
             tridimensional [0] = "Pelota";
             tridimensional [1] = "Camiseta";
 
@@ -46,15 +46,19 @@
 
             //creamos un array de una dimension, 
             //en donde su dato es conectar con el array bidimensional
-            var unidimensional = [];
+            /*var unidimensional = [];
             unidimensional[0] = "Casa";
             unidimensional[1] = "Perico";
-            unidimensional[2] = bidimensional;
+            unidimensional[2] = bidimensional;*/
 
             //Imprimiendo contenido
             document.write("<p>");
 
-            document.write(unidimensional[2][3][0]);
+            /*document.write(unidimensional[2][3][0]);*/
+
+            //otra forma de hacer arrays multidimensionales
+            var am = ["Perro" , "Gato", ["Java", "CSS", ["React" , "Taildwind"]]];
+            document.write(am[2][2][1]);
 
             document.write("</p>")
         </script>

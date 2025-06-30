@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practica de Condiciones - Manejo de DOM</title>
+</head>
+
+        <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: rgb(189, 183, 183);
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+    </style>
+<body>
+
+  <section>
+<table border="1" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Combo</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Combo A 🍿</td>
+        <td>$4</td>
+      </tr>
+      <tr>
+        <td>Combo B 🍿🥤</td>
+        <td>$6</td>
+      </tr>
+      <tr>
+        <td>Combo C 🍿🥤🍫</td>
+        <td>$8</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br>
+
+  <form id="dulceria">
+    <label for="Presupuesto">Ingrese su Presupuesto:</label><br>
+    <input type="text" id="Presupuesto"><br><br>
+
+    <label>El combo que puede comprar es: <span id="Respuesta"></span></label><br><br>
+    <label>Dinero que resta es: <span id="Sobrante"></span></label><br><br>
+
+    <input type="submit" value="Comprobar">
+  </form>
+
+  </section>
+
+  
+  <script>
+    document.getElementById("dulceria").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const comboA = 4;
+      const comboB = 6;
+      const comboC = 8;
+
+      const presupuesto = parseFloat(document.getElementById("Presupuesto").value);
+      const respuesta = document.getElementById("Respuesta");
+      const sobrante = document.getElementById("Sobrante");
+
+      if (!isNaN(presupuesto)) {
+        if (presupuesto >= comboC) {
+          respuesta.textContent = "El Combo que puede comprar es el Combo C 🍿🥤🍫";
+          sobrante.textContent = "$" + (presupuesto - comboC).toFixed(2);
+          respuesta.style.color = "green";
+        } else if (presupuesto >= comboB) {
+          respuesta.textContent = "El Combo que puede comprar es el Combo B 🍿🥤";
+          sobrante.textContent = "$" + (presupuesto - comboB).toFixed(2);
+          respuesta.style.color = "green";
+        } else if (presupuesto >= comboA) {
+          respuesta.textContent = "El Combo que puede comprar es el Combo A 🍿";
+          sobrante.textContent = "$" + (presupuesto - comboA).toFixed(2);
+          respuesta.style.color = "green";
+        } else {
+          respuesta.textContent = "No puede comprar ningún combo 😔";
+          respuesta.style.color = "red";
+          respuesta.style.backgroundColor = "black"
+          sobrante.textContent = "";
+        }
+      } else {
+        respuesta.textContent = "Por favor, ingrese un número válido.";
+        respuesta.style.color = "red";
+        sobrante.textContent = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
