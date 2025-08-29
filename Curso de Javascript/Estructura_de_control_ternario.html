@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Control Ternario - Curso JavaScript</title>
+</head>
+<body>
+    <script>
+        console.clear();
+
+        /**
+        - Condición ? expresión1 : expresión2
+        - Condicion ? true : false
+        - 
+        - Condición: condición que se evalua para determinar si se ejecuta la expresion1 o la expresion2
+
+        - expresion1: expresion que se ejecuta si la condicion es verdadera
+        - expresion2: expresion que se ejecuta si la condicion es falsa
+         */ 
+
+        /**
+         let edad = 60, mensaje;
+         if (edad >= 18){
+            mensaje = "Eres Mayor de Edad"
+         }else{
+            mensaje = "Eres Menor de Edad"
+         }
+         */
+
+         /*
+         mensaje = edad >= 18 ? "Eres Mayor de Edad" : "Eres Menor de Edad"; 
+         */
+
+         let a = 3;
+         let numero = a === 3 ? "Tres" : 
+                      a === 5 ? "Cinco" :
+                      a === 7 ? "Siete" :
+                      "Ningun Numero";
+
+         console.log(numero);
+    </script>
+</body>
+</html>
