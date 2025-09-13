@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentencia While - Curso de Javascript</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: white;
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        table{
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th{
+            color: firebrick;
+
+        }
+
+        th,td{
+            border: 1 dashed black;
+            padding: 7px;
+        }
+        
+    </style>
+
+    <section>
+        <table border="1" style="border: dashed;">
+            <thead>
+                <tr>
+                    <th>NO.</th>
+                    <th>Meses del Año</th>
+                </tr>
+            </thead>
+            <tbody style="border: dashed;">
+                <script>
+                    var meses = ["Enero", "Febrero", "Marzo", 
+                    "Abril", "Mayo", "Junio", "Julio", 
+                    "Agosto", "Septiembre", 
+                    "Octubre", "Noviembre", "Diciembre"];
+
+                    var contador = 0;
+
+                        while (contador < meses.length){
+                        document.write("<tr style='border: dashed;''>");
+                        document.write("<td style='border: dashed;''>");
+                        document.write(contador+1);
+                        document.write("</td>");
+                        document.write("<td>");
+                        document.write(meses[contador]);
+                        document.write("</td>")
+                        document.write("</tr>");
+                        contador++;   
+                    }
+
+                </script>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

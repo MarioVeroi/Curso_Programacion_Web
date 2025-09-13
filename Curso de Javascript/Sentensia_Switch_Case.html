@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sentencia Switch/Case - Curso de JavaScript</title>
+</head>
+<body>
+  <script>
+    // Pedir datos
+    const n1Str = prompt("Ingresar un número:");
+    const n2Str = prompt("Ingresar un segundo número:");
+    let operacion = prompt("Ingrese la operación: Suma, Resta, Multiplicacion, Division (también +, -, *, /)");
+
+    // Si el usuario canceló algún prompt
+    if (n1Str === null || n2Str === null || operacion === null) {
+      alert("Operación cancelada.");
+    } else {
+      // Convertir a número
+      const numero1 = parseFloat(n1Str.replace(",", ".")); // admite coma decimal
+      const numero2 = parseFloat(n2Str.replace(",", "."));
+
+      // Normalizar operación
+      operacion = operacion.trim().toLowerCase();
+
+      // Validaciones
+      if (isNaN(numero1) || isNaN(numero2)) {
+        alert("Error: Debe ingresar números válidos.");
+      } else {
+        let resultado;
+        switch (operacion) {
+          case "suma":
+          case "+": 
+            resultado = numero1 + numero2;
+            alert(`Resultado de la suma: ${resultado}`);
+            break;
+
+          case "resta":
+          case "-":
+            resultado = numero1 - numero2;
+            alert(`Resultado de la resta: ${resultado}`);
+            break;
+
+          case "multiplicacion":
+          case "multiplicación":
+          case "*":
+          case "x":
+          case "×":
+            resultado = numero1 * numero2;
+            alert(`Resultado de la multiplicación: ${resultado}`);
+            break;
+
+          case "division":
+          case "división":
+          case "/":
+          case "÷":
+            if (numero2 === 0) {
+              alert("Error: No se puede dividir entre cero.");
+            } else {
+              resultado = numero1 / numero2;
+              alert(`Resultado de la división: ${resultado}`);
+            }
+            break;
+
+          default:
+            alert("Operación no reconocida. Use Suma, Resta, Multiplicacion, Division o los símbolos +, -, *, /");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
