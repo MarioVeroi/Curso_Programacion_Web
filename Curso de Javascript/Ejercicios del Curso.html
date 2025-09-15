@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ejercicio do-while: duplicar, incrementar y filtrar</title>
+<style>
+  :root{--bg:#0b1320;--card:#111a2b;--muted:#9fb0d1;--accent:#2dd4bf;--ok:#22c55e;--warn:#f59e0b}
+  html,body{margin:0;padding:0;background:var(--bg);color:#e7eefc;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+  .wrap{max-width:980px;margin:32px auto;padding:0 16px}
+  h1{font-size:clamp(22px,4vw,34px);margin:0 0 12px}
+  p.lead{color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid #1f2b44;border-radius:16px;padding:18px;margin:16px 0;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  .row{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:900px){.row{grid-template-columns:1fr 1fr}}
+  .label{font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  .pre{background:#0c1424;border:1px dashed #233152;border-radius:12px;padding:12px 14px;overflow:auto;white-space:pre-wrap}
+  .log{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.45}
+  .good{color:var(--ok)} .accent{color:var(--accent)} .warn{color:var(--warn)}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  button{background:var(--accent);color:#06231f;font-weight:700;border:0;border-radius:12px;padding:10px 14px;cursor:pointer}
+  button.secondary{background:#192843;color:#e7eefc;border:1px solid #2b3a5a}
+  input[type="text"]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #2b3a5a;background:#0c1424;color:#e7eefc}
+  small.hint{display:block;color:var(--muted);margin-top:6px}
+  ul{margin:8px 0 0 22px}
+  hr{border:0;border-top:1px solid #223258;margin:18px 0}
+  kbd{background:#0c1424;border:1px solid #2b3a5a;border-bottom-width:2px;border-radius:6px;padding:0 6px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Ejercicio con <code>do…while</code>: duplicar, incrementar y filtrar</h1>
+
+    <ol>
+        <li>Inicializar Arrays: Crea arrays numeros, duplicados, y resultado.</li>
+        <li>Duplicar Números: Recorre numeros con un bucle do while, duplicando cada elemento y almacenándolo en duplicados.</li>
+        <li>Incrementar y Filtrar: Reinicia tu índice y usa otro bucle do while para incrementar cada elemento de duplicados en 10, filtrando aquellos mayores a 15 en resultado.</li>
+    </ol>
+
+    <p class="lead">Esta página muestra paso a paso cómo, a partir de un arreglo base <em>(numeros)</em>, se construyen <em>duplicados</em> y luego <em>resultado</em> usando exclusivamente bucles <code>do…while</code>.</p>
+
+    <!-- Configuración inicial -->
+    <div class="card">
+      <div class="label">1) Inicializar Arrays</div>
+      <p>Escribe los valores de <strong>numeros</strong> separados por comas. Luego pulsa <kbd>Ejecutar</kbd>.</p>
+      <input id="entrada" type="text" value="1, 5, 10, 20" aria-label="Valores iniciales" style="box-sizing: border-box;"/>
+      <small class="hint">Ejemplo: <code>3, 7, 8, 0, 12</code></small>
+      <div class="btns">
+        <button id="btnRun">Ejecutar</button>
+        <button id="btnReset" class="secondary">Restablecer</button>
+      </div>
+    </div>
+
+    <!-- Paso A -->
+    <div class="card">
+      <div class="label">2) Duplicar Números (Primer <code>do…while</code>)</div>
+      <p>Recorremos <strong>numeros</strong> con un bucle <code>do…while</code>. En cada iteración tomamos el elemento actual, lo multiplicamos por <strong>2</strong> y lo guardamos en <strong>duplicados</strong>.</p>
+      <div id="panelA" class="pre log" aria-live="polite">Aún sin ejecutar…</div>
+    </div>
+
+    <!-- Paso B -->
+    <div class="card">
+      <div class="label">3) Incrementar y Filtrar (Segundo <code>do…while</code>)</div>
+      <p>Reiniciamos el índice y volvemos a recorrer <strong>duplicados</strong> con otro <code>do…while</code>. A cada valor le sumamos <strong>10</strong> y solo lo añadimos a <strong>resultado</strong> si es <span class="warn">mayor que 15</span>.</p>
+      <div id="panelB" class="pre log" aria-live="polite">Aún sin ejecutar…</div>
+    </div>
+
+    <!-- Resumen final -->
+    <div class="card">
+      <div class="label">4) Resumen y Salida Final</div>
+      <div id="panelResumen" class="pre log">Aún sin ejecutar…</div>
+      <hr />
+      <div class="row">
+        <div>
+          <div class="label">Arreglo inicial: <em>numeros</em></div>
+          <div id="viewNumeros" class="pre">[]</div>
+        </div>
+        <div>
+          <div class="label">Duplicados</div>
+          <div id="viewDuplicados" class="pre">[]</div>
+        </div>
+      </div>
+      <div style="margin-top:16px">
+        <div class="label">Resultado (&gt; 15 tras +10)</div>
+        <div id="viewResultado" class="pre">[]</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Notas</div>
+      <ul>
+        <li>Se usan <strong>dos bucles <code>do…while</code></strong> obligatorios: el primero para duplicar, el segundo para incrementar y filtrar.</li>
+        <li>El índice se <strong>reinicia</strong> entre los dos bucles.</li>
+        <li>La condición de filtrado es: <code>valorDuplicado + 10 &gt; 15</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+
+  const entrada = $("entrada");
+  const panelA = $("panelA");
+  const panelB = $("panelB");
+  const panelResumen = $("panelResumen");
+  const viewNumeros = $("viewNumeros");
+  const viewDuplicados = $("viewDuplicados");
+  const viewResultado = $("viewResultado");
+  const btnRun = $("btnRun");
+  const btnReset = $("btnReset");
+
+  function parseNumeros(texto){
+    // Convierte "1, 5, 10" a [1,5,10], ignorando espacios y vacíos
+    return texto
+      .split(",")
+      .map(x => x.trim())
+      .filter(x => x !== "")
+      .map(x => Number(x))
+      .filter(x => Number.isFinite(x));
+  }
+
+  function fmtArray(arr){
+    return "[" + arr.join(", ") + "]";
+  }
+
+  function ejecutar(){
+    // 1) Inicializar arrays
+    let numeros = parseNumeros(entrada.value);
+    let duplicados = [];
+    let resultado = [];
+
+    // Mostrar estado inicial
+    viewNumeros.textContent = fmtArray(numeros);
+    viewDuplicados.textContent = "[]";
+    viewResultado.textContent = "[]";
+    panelA.textContent = "";
+    panelB.textContent = "";
+    panelResumen.textContent = "";
+
+    if(numeros.length === 0){
+      const aviso = "No hay números válidos. Ingresa al menos un número separado por comas.";
+      panelA.textContent = aviso;
+      panelB.textContent = aviso;
+      panelResumen.textContent = aviso;
+      return;
+    }
+
+    // 2) Duplicar números con do…while
+    let i = 0;
+    do {
+      const original = numeros[i];
+      const doble = original * 2;
+      duplicados.push(doble);
+      panelA.textContent += `i=${i} → numero=${original} × 2 = ${doble}\n`;
+      i++;
+    } while (i < numeros.length);
+
+    // Mostrar duplicados
+    viewDuplicados.textContent = fmtArray(duplicados);
+
+    // 3) Incrementar (+10) y filtrar (>15) con otro do…while
+    i = 0; // reiniciamos índice
+    do {
+      const base = duplicados[i];
+      const incrementado = base + 10;
+      const pasa = incrementado > 15;
+      panelB.textContent += `i=${i} → ${base} + 10 = ${incrementado}  ${pasa ? "→ ✅ pasa (>15)" : "→ ❌ no pasa"}\n`;
+      if (pasa) resultado.push(incrementado);
+      i++;
+    } while (i < duplicados.length);
+
+    // Mostrar resultados
+    viewResultado.textContent = fmtArray(resultado);
+
+    // 4) Resumen final
+    panelResumen.innerHTML =
+      `• <span class="accent">numeros</span> = ${fmtArray(numeros)}\n` +
+      `• <span class="accent">duplicados</span> (x2) = ${fmtArray(duplicados)}\n` +
+      `• <span class="accent">resultado</span> (+10 y >15) = <span class="${resultado.length ? 'good' : 'warn'}">${fmtArray(resultado)}</span>`;
+  }
+
+  function resetear(){
+    entrada.value = "1, 5, 10, 20";
+    panelA.textContent = "Aún sin ejecutar…";
+    panelB.textContent = "Aún sin ejecutar…";
+    panelResumen.textContent = "Aún sin ejecutar…";
+    viewNumeros.textContent = "[]";
+    viewDuplicados.textContent = "[]";
+    viewResultado.textContent = "[]";
+  }
+
+  btnRun.addEventListener("click", ejecutar);
+  btnReset.addEventListener("click", resetear);
+})();
+</script>
+
+<!-- Demostración final -->
+<div class="card">
+  <div class="label">Demostración final del código</div>
+  <button id="btnToggleCode">Ver código</button>
+  <pre id="finalCode" style="display:none; margin-top:12px; background:#0c1424; color:#e7eefc; padding:12px; border-radius:10px; overflow-x:auto;">
+// Inicializar arrays   
+let numeros = [1, 5, 10, 20];
+let duplicados = [];
+let resultado = [];
+
+// --- Duplicar Números ---
+let i = 0;
+do {
+    duplicados.push(numeros[i] * 2);
+    i++;
+} while (i < numeros.length);
+
+console.log("Duplicados:", duplicados);
+
+// --- Incrementar y Filtrar ---
+i = 0; // reiniciamos índice
+do {
+    let valor = duplicados[i] + 10;
+    if (valor > 15) {
+        resultado.push(valor);
+    }
+    i++;
+} while (i < duplicados.length);
+
+console.log("Resultado final:", resultado);
+  </pre>
+</div>
+
+<script>
+  const btnToggleCode = document.getElementById("btnToggleCode");
+  const finalCode = document.getElementById("finalCode");
+  btnToggleCode.addEventListener("click", () => {
+    const visible = finalCode.style.display === "block";
+    finalCode.style.display = visible ? "none" : "block";
+    btnToggleCode.textContent = visible ? "Ver código" : "Ocultar código";
+  });
+</script>
+
+
+
+</body>
+</html>

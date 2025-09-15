@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentencia Do-While - Curso de Javascript</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: white;
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        table{
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th{
+            color: firebrick;
+
+        }
+
+        th,td{
+            border: 1 dashed black;
+            padding: 7px;
+        }
+        
+    </style>
+
+    <section>
+         <script>
+            do {
+                 var numero = prompt("Escribe un numero del 1 al 20");
+            } while (numero<1  || numero>20 || isNaN(numero));
+
+         </script>
+    </section>
+</body>
+</html>
