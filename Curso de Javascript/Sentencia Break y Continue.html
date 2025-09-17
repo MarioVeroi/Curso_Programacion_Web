@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentencia Break y Continue - Curso de Javascript</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: white;
+            border: 2px solid black;
+            height: auto;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        table{
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th{
+            color: firebrick;
+
+        }
+
+        caption{
+            color: firebrick;
+            font-weight: bold;
+            padding: 3px ;
+        }
+
+        th,td{
+            border: 1 dashed black;
+            padding: 9px 25px;
+        }
+        
+    </style>
+
+
+    <section>
+
+                <script>
+
+                    for(var i = 1; i <=10; i++){
+                        
+                        if(i == 3){
+                            continue;
+                        }
+
+
+                        document.write("<table border='1' style='border: dashed;'><caption>Tabla de Multiplicar del "+i+"</caption><tbody>")
+
+                        for(var x = 1; x <=10; x++){
+                        document.write("<tr>");
+                        document.write("<td>"+i+"</td><td>x</td><td>"+x+"</td><td>=</td><td>"+(i*x)+"</td>");
+                        document.write("<tr>");
+
+                        if(x == 4){
+                            break;
+                        }
+                        }
+
+                        document.write("</tbody></table><br>")
+                        
+                        if(i==7){
+                            break
+                        }
+
+                    }
+
+                    var num = 0;
+                    while(num < 5 ){
+                        
+                        var incremento = prompt("La cuenta esta en: "+ num +", Sigo ingrementando?", "si").toLocaleLowerCase
+                        if(incremento == "no"){
+                            continue;
+                        }
+                        
+                        num++;
+                    }
+
+                </script>
+            </tbody>
+        </table>
+
+    </section>
+
+</body>
+</html>
