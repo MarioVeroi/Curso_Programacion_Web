@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentencia Break y Continue - Curso de Javascript</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+        }
+
+        section {
+            background-color: white;
+            border: 2px solid black;
+            height: auto;
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th {
+            color: firebrick;
+
+        }
+
+        caption {
+            color: firebrick;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        th,
+        td {
+            border: 1 dashed black;
+            padding: 9px 25px;
+        }
+    </style>
+
+
+    <section>
+
+        <h1>Funciones</h1>
+        <script>
+            function saludo() {
+                alert("Hola, Que Tal");
+                document.write("Como estas?")
+            }
+
+            function saludo() {
+                alert("Sobrescribiendo La Funcion");
+                document.write("Como estas? ")
+            }
+
+            saludo();
+
+
+            function preguntarNombre() {
+                var nombre = prompt("Cual es su Nombre?");
+                document.write("<h1>" + nombre + "</h1>");
+            }
+
+
+            preguntarNombre();
+        </script>
+
+    </section>
+
+
+    <section>
+
+        <h1>Funcion con Parametros</h1>
+        <h5>Suma</h5>
+        <script>
+            var suma = function (num1, num2) {
+                document.write('<h1>' + (num1 + num2) + '</h1>');
+            }
+
+            suma(34, 56);
+        </script>
+
+
+    </section>
+
+    <section>
+
+        <h1>Funcion con argmuments</h1>
+        <h5>Suma</h5>
+        <script>
+
+            function suma() {
+                suma = 0;
+
+                for (i = 0; i < arguments.length; i++) {
+
+                    suma += parseInt(arguments[i]);
+
+                }
+
+                document.write('<h3>' + suma + '</h3')
+            }
+
+
+            suma(75, 67, 67, 90, 1100);
+        </script>
+
+
+    </section>
+
+
+            <script>
+
+            function suma(num1,num2){
+                return num1 + num2;
+            }
+
+
+            function multiplica(num1, num2) {
+                return num1 * num2;
+            }
+
+
+            function describeNumero(num1){
+                if ( num1 > 0 && num1 < 10){
+                    return "El Numero:"+num1+" Es Positivo y es menor a 10 <3";
+                }else{
+                    return "El Numero:"+num1+" No cumple con las especificaciones... :c";
+                }
+            }
+
+            console.log(suma(3, 4));
+            console.log(multiplica(3, 4));
+            console.log(describeNumero(8));
+        </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
